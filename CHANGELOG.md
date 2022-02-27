@@ -3,7 +3,9 @@ This document contains a summary of changes for this project
 
 ## [Unreleased]
 ### Added
-
+- JavaFX plugin
+- GSON dependency
+- License management plugin
 ### Changed
 
 ### Removed
