@@ -31,16 +31,21 @@ dependencies {
 
 javadoc {
     source = sourceSets.main.allJava
-    destinationDir = reporting.file("../../docs")
+    destinationDir = reporting.file("../docs")
 }
 task myJavadocs(type: Javadoc) {
     source = sourceSets.main.allJava
-    destinationDir = reporting.file("../../docs")
+    destinationDir = reporting.file("../docs")
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'cs2263_hw03.App'
+    mainClass = 'cs2263_hw03.CourseProcessor'
+}
+
+javafx {
+    version = "14.0.2"
+    modules = [ 'javafx.base', 'javafx.swing', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web' ]
 }
 
 tasks.named('test') {
