@@ -6,6 +6,8 @@ public class Course {
     private String name;
     private int credits;
 
+    private static String[] DEPARTMENTS = {"CS", "MATH", "CHEM", "PHYS", "BIOL", "EE"};
+
     /**
      * Simple getter for the course department
      * @return String  The course's department
@@ -15,11 +17,19 @@ public class Course {
     }
 
     /**
-     * Simple setter for the course department
+     * Setter for the course department
      * @param department String  The course's department
      */
     public void setDepartment(String department) {
-        this.department = department;
+        switch (department) {
+            case "Computer Science": this.department = DEPARTMENTS[0]; break;
+            case "Mathematics": this.department = DEPARTMENTS[1]; break;
+            case "Chemistry": this.department = DEPARTMENTS[2]; break;
+            case "Physics": this.department = DEPARTMENTS[3]; break;
+            case "Biology": this.department = DEPARTMENTS[4]; break;
+            case "Electrical Engineering": this.department = DEPARTMENTS[5]; break;
+            default: throw new NullPointerException();
+        }
     }
 
     /**
@@ -78,7 +88,15 @@ public class Course {
      * @param credits int  The number of credits this course is worth
      */
     public Course(String department, int number, String name, int credits) {
-        this.department = department;
+        switch (department) {
+            case "Computer Science": this.department = DEPARTMENTS[0]; break;
+            case "Mathematics": this.department = DEPARTMENTS[1]; break;
+            case "Chemistry": this.department = DEPARTMENTS[2]; break;
+            case "Physics": this.department = DEPARTMENTS[3]; break;
+            case "Biology": this.department = DEPARTMENTS[4]; break;
+            case "Electrical Engineering": this.department = DEPARTMENTS[5]; break;
+            default: throw new NullPointerException();
+        }
         this.number = number;
         this.name = name;
         this.credits = credits;
@@ -90,6 +108,6 @@ public class Course {
     public Course(){};
 
     public String toString() {
-        return new String(this.department + ": " + this.number + ": " + this.name + ": " + credits);
+        return new String(this.department + ": " + this.number + ": " + this.name + ": " + credits + " credits");
     }
 }
